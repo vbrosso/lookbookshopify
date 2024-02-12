@@ -1,0 +1,128 @@
+body#page-Look{
+    min-height: 700px;
+    .photo-block{
+        position: relative;
+    }
+    .photo-block:after{
+        content: '';
+        display: none; 
+    }
+    .photo-block.active:after{
+        content: '';
+        display: block;
+        background:url('medidasRule.png?=2024') no-repeat;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .contentJsonLook{
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+        width: 96%;
+    }
+    .custom-look{
+        position: relative;
+        display: block;
+        width: 589px;
+        max-width: 95%;
+        margin: 0 auto;
+        .lookbook-block a{
+            position: absolute;
+            border: 1px solid #9e9e9e;
+            width: 20px;
+            height: 20px;
+            background-color: #eee;
+            display: block;
+            border-radius: 100%;
+            opacity: 0.7;
+            &.active,
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+    #tooltipLookbook{
+        position: absolute;
+        top: 23%;
+        right: 5%;
+        border: 1px solid #ccc;
+        width: 230px;
+        background: #fff;
+        box-shadow: 3px 1px 5px 0px rgba(0,0,0,0.1);
+        padding-bottom: 30px;
+        .btn-fechar{
+            background: url(close_icon.svg) no-repeat;
+            background-size: 17px;
+            display: block;
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            width: 20px;
+            height: 20px;
+            z-index: 8;
+            font-size: 0;
+        }
+        .swiper-slide{
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            .price{
+                font-weight: bold;
+            }
+            h3{
+                padding: 5px 3px;
+            }
+        }
+        img{
+            max-width: 200px;
+        }
+        a.addCart{
+            width: 150px;
+            height: 25px;
+            background-color: #000;
+            padding: 5px;
+            margin: 0 auto;
+            display: block;
+            text-align: center;
+            color:#fff;
+            text-decoration: none;
+            &.loading{
+                position: relative;
+                &:after{
+                    content: '';
+                    background: url(loader.svg?=2024) transparent;
+                    background-size: 30px;
+                    position: absolute;
+                    width: 30px;
+                    height: 30px;
+                    left: 10px;
+                    top: 3px;
+                }
+            }
+        }
+    }
+    .shopify-section-group-footer-group{
+        display: none;
+    }
+    .swiper-container{
+        overflow: hidden;
+    }
+}
+
+/* Media Query for Mobile */
+@media only screen and (max-width: 600px) {
+    .photo-block {
+        position: relative;
+        margin: 0 auto;
+        max-width: 364px;
+    }
+
+    .photo-block img {
+        width: 100%;
+    }
+}

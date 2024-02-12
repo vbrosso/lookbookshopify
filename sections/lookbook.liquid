@@ -1,0 +1,88 @@
+{% if page.title == 'Look' %}
+
+    <div class="custom-look">
+      <h1>{{ section.settings.titleLook}}</h1>
+      <p>{{ section.settings.textLook}}</p>
+      {% if section.settings.photo_look != blank %}
+        <div class="photo-block">
+            <img src="{{ section.settings.photo_look | img_url: 'master' }}" alt="Imagem selecionada">
+        </div>
+        {% endif %}
+
+        {% for block in section.blocks %}
+        <div class="lookbook-block">
+            <a href="#" data-handle="{{ block.settings.product.handle }}" style="left:{{ block.settings.horizontal }}%; top:{{ block.settings.vertical }}%"></a>
+        </div>
+        {% endfor %}
+    </div>
+
+{% endif %}
+
+<!-- Fim do arquivo custom-section.liquid -->
+{% schema %}
+{
+  "name": "Look Config",
+  "settings": [
+    {
+      "type": "text",
+      "id": "titleLook",
+      "label": "Titulo da página",
+      "default": "LookBook dinâmico"
+    },
+     {
+      "type": "text",
+      "id": "textLook",
+      "label": "Texto da página",
+      "default": "Loren ipsun dolor texto lookboook dinamico para testar loren ipsun dolor teste amet"
+    },
+    {
+      "type": "image_picker",
+      "id": "photo_look",
+      "label": "Upload de Foto Principal",
+      "info": "Adicione uma foto principal."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "lookbook",
+      "name": "Lookbook",
+      "settings": [
+        {
+          "type": "text",
+          "id": "horizontal",
+          "label": "Campo Horizontal",
+          "info": "Digite um valor numérico de 1 a 100%"
+        },
+        {
+          "type": "text",
+          "id": "vertical",
+          "label": "Campo Vertical",
+          "info": "Digite um valor numérico de 1 a 100%."
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Selecione um Produto",
+          "info": "Selecione um produto da loja para o bloco dinâmico."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Section",
+      "category": "custom",
+      "settings": {
+        "photo_look": ""
+      },
+      "blocks": [
+        {
+          "type": "lookbook"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+

@@ -1,0 +1,39 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "lookbook_JqYT3h": {
+      "type": "lookbook",
+      "settings": {
+        "photo_blocks": "shopify:\/\/shop_images\/look.jpg",
+        "horizontal_1": "47",
+        "vertical_1": "28",
+        "product_1": "blusa",
+        "horizontal_2": "46",
+        "vertical_2": "44",
+        "product_2": "calca-jeans"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "newsletter_enable": true,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": true,
+        "show_social": true,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "lookbook_JqYT3h",
+    "footer"
+  ]
+}
