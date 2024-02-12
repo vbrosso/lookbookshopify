@@ -39,6 +39,16 @@ body#page-Look{
             display: block;
             border-radius: 100%;
             opacity: 0.7;
+            text-align: center;
+            &:after{
+                content: '+';
+                line-height: 18px;
+                font-size: 25px;
+                text-decoration: none;
+                top: 0px;
+                position: absolute;
+                left: 3px;
+            }
             &.active,
             &:hover{
                 opacity: 1;
@@ -50,7 +60,7 @@ body#page-Look{
         top: 23%;
         right: 5%;
         border: 1px solid #ccc;
-        width: 230px;
+        width: 267px;
         background: #fff;
         box-shadow: 3px 1px 5px 0px rgba(0,0,0,0.1);
         padding-bottom: 30px;
@@ -65,6 +75,7 @@ body#page-Look{
             height: 20px;
             z-index: 8;
             font-size: 0;
+            cursor: pointer;
         }
         .swiper-slide{
             display: flex;
@@ -76,17 +87,20 @@ body#page-Look{
             }
             h3{
                 padding: 5px 3px;
+                font-weight: bold;
+                font-size: 18px;
             }
         }
         img{
             max-width: 200px;
+            border:1px solid #eee;
         }
         a.addCart{
             width: 150px;
             height: 25px;
             background-color: #000;
             padding: 5px;
-            margin: 0 auto;
+            margin: 4px auto;
             display: block;
             text-align: center;
             color:#fff;
