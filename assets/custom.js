@@ -203,24 +203,28 @@ document.addEventListener('DOMContentLoaded', function() {
 						closeButton.addEventListener('click', closeTooltip);
 						tooltipLookbook.appendChild(closeButton);
 
-						// fechar o tooltipLookbook quando clicar fora
-						document.addEventListener('click', function(event) {
-							if (!tooltipLookbook.contains(event.target) && event.target !== link) {
-								closeTooltip();
-							}
-						});
+						// fechar o tooltipLookbook quando clicar fora mobile
+						if(window.innerWidth < 680){
+							document.addEventListener('click', function(event) {
+								if (!tooltipLookbook.contains(event.target) && event.target !== link) {
+									closeTooltip();
+								}
+							});
+						}
 					});
 				})
 				.catch(error => console.error('Erro ao carregar informações do produto:', error));
 		});
 	});
 
-	// fechar tooltip ao clicar fora
-	document.addEventListener('click', function(event) {
-		if (!tooltipLookbook.contains(event.target)) {
-			closeTooltip();
-		}
-	});
+	// fechar tooltip ao clicar fora mobile
+	if(window.innerWidth < 680){
+		document.addEventListener('click', function(event) {
+			if (!tooltipLookbook.contains(event.target)) {
+				closeTooltip();
+			}
+		});
+	}
 
 	//mostra regua admin
 	const photoBlock = document.querySelector('.photo-block');
