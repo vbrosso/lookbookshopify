@@ -1,5 +1,5 @@
 # lookbookshopify
-# Arquivos customizados
+# Customization files - Theme Dawn
 
 - assets/custom.css
 - assets/custom.js
